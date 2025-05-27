@@ -380,18 +380,18 @@ for i in "${themes[@]}"; do
   git commit -a -m "Updated to latest template."
 
   # replace pageTitle: "Quartz 4", with pageTitle: "${i}", in `quartz.config.ts`
-  sed -i -e 's|pageTitle: "Quartz 4"|pageTitle: "'${i}'"|' quartz.config.ts
+  # sed -i -e 's|pageTitle: "Quartz 4"|pageTitle: "'${i}'"|' quartz.config.ts
 
   # replace baseUrl: "quartz.jzhao.xyz", with baseUrl: "quartz-themes.github.io/${i}", in `quartz.config.ts`
-  sed -i -e 's|baseUrl: "quartz.jzhao.xyz"|baseUrl: "quartz-themes.github.io/'${i}'"|' quartz.config.ts
+  # sed -i -e 's|baseUrl: "quartz.jzhao.xyz"|baseUrl: "quartz-themes.github.io/'${i}'"|' quartz.config.ts
 
   # replace ---.*?Quartz is a fast, with ---\n\nQuartz is a fase, in `docs/index.md` using perl
-  perl -0777 -i -pe 's/\n---.*?Quartz is a fast/\n---\n\nQuartz is a fast/' docs/index.md
+  # perl -0777 -i -pe 's/\n---.*?Quartz is a fast/\n---\n\nQuartz is a fast/' docs/index.md
 
   # replace Quartz is a fast with [${i}](https://github.com/quartz-themes/${i})\n\nQuartz is a fast, in `docs/index.md`
-  sed -i -e 's|Quartz is a fast|[Quartz Themes on GitHub](https://github.com/saberzero1/quartz-themes/tree/master/themes/'${i}').\n\nQuartz is a fast|' docs/index.md
+  # sed -i -e 's|Quartz is a fast|[Quartz Themes on GitHub](https://github.com/saberzero1/quartz-themes/tree/master/themes/'${i}').\n\nQuartz is a fast|' docs/index.md
 
-  git commit -a -m "Updated theme to latest template."
+  # git commit -a -m "Updated theme to latest template."
 
   git push || git push --force
   # git push
